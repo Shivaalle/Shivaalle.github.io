@@ -37,6 +37,16 @@ npm run preview
 
 OpsBuddy AI and Idea Innovator AI use synthetic demo data. Client systems, identifiers, runbooks, production prompts, scoring configuration, and generated artifacts are not included. PM Agent uses synthetic checked-in fixtures; its metrics come from the repository's golden eval results.
 
+## Resume
+
+The downloadable PDF at `public/Shiva-Teja-Alle-Resume.pdf` is generated from `resume/Shiva-Teja-Alle-Resume.html`. Edit the HTML and run:
+
+```bash
+./resume/build.sh
+```
+
+The script uses headless Chrome on macOS to print the resume to PDF.
+
 ## Deployment
 
 Pushes to `main` trigger the workflow in `.github/workflows/deploy.yml`, which builds the Vite app and publishes `dist/` to GitHub Pages.

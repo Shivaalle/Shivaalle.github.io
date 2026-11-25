@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shiva Teja Alle — Resume</title>
+    <style>
+      @page {
+        size: Letter;
+        margin: 0.52in 0.6in 0.5in;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 9.55pt;
+        line-height: 1.34;
+        color: #111726;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: #1d4ed8;
+        text-decoration: none;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 21pt;
+        line-height: 1.1;
+        letter-spacing: 0.6px;
+        font-weight: 700;
+        color: #0b1220;
+      }
+
+      .contact {
+        margin: 3px 0 0;
+        font-size: 9pt;
+        color: #1f2937;
+      }
+
+      .contact a {
+        color: #1d4ed8;
+      }
+
+      .contact .sep {
+        color: #94a3b8;
+        padding: 0 3px;
+      }
+
+      section {
+        margin-top: 9px;
+      }
+
+      h2 {
+        margin: 0 0 5px;
+        padding-bottom: 2px;
+        border-bottom: 1.6px solid #1d4ed8;
+        font-size: 10.6pt;
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+        font-weight: 700;
+        color: #0b1220;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .summary {
+        text-align: justify;
+      }
+
+      .skill {
+        margin: 0 0 2.5px;
+      }
+
+      .skill strong {
+        font-weight: 700;
+      }
+
+      .job {
+        margin-top: 7px;
+      }
+
+      .job:first-of-type {
+        margin-top: 0;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 14px;
+      }
+
+      .row .right {
+        flex: none;
+        white-space: nowrap;
+        font-size: 8.9pt;
+        color: #1f2937;
+      }
+
+      .company {
+        font-size: 10.4pt;
+        font-weight: 700;
+        color: #0b1220;
+      }
+
+      .role {
+        font-size: 9.4pt;
+        font-style: italic;
+        color: #1f2937;
+      }
+
+      .project {
+        margin-top: 6px;
+        break-after: avoid;
+      }
+
+      .project .name {
+        font-weight: 700;
+        color: #111726;
+      }
+
+      .project .right {
+        font-style: italic;
+      }
+
+      ul {
+        margin: 2px 0 0;
+        padding-left: 14px;
+      }
+
+      li {
+        margin: 0 0 2.2px;
+        padding-left: 1px;
+        text-align: justify;
+        break-inside: avoid;
+      }
+
+      li::marker {
+        color: #111726;
+      }
+
+      .edu {
+        margin-top: 2px;
+      }
+
+      .edu .degree {
+        font-weight: 700;
+      }
+
+      .edu .school {
+        color: #1f2937;
+      }
+
+      .cert-list {
+        margin-top: 2px;
+      }
+
+      .cert-list li {
+        margin-bottom: 1.8px;
+      }
+
+      .avoid-break {
+        break-inside: avoid;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>SHIVA TEJA ALLE</h1>
+      <p class="contact">
+        +91-9390347354<span class="sep">|</span
+        ><a href="mailto:shiva.alle22@gmail.com">shiva.alle22@gmail.com</a
+        ><span class="sep">|</span>Hyderabad, Telangana
+      </p>
+      <p class="contact">
+        <a href="https://www.linkedin.com/in/shiva-teja-alle-254895201">LinkedIn</a
+        ><span class="sep">|</span><a href="https://github.com/Shivaalle">GitHub</a
+        ><span class="sep">|</span
+        ><a href="https://shivaalle.github.io">Portfolio: shivaalle.github.io</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Results-driven Generative AI Engineer with 2+ years of experience building and deploying production-grade AI
+        systems for enterprise IT operations and business innovation. Specialized in Agentic AI, RAG architectures,
+        Multi-Agent Systems, Model Context Protocol (MCP), and scalable LLM platforms. Proven expertise in end-to-end
+        AI solution delivery using Python, FastAPI, LangChain, LangGraph, AWS (Bedrock, ECS Fargate, Lambda, DynamoDB),
+        Azure OpenAI (GPT-4o), and Vector Databases, translating complex workflows into secure, observable, high-impact
+        products.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <p class="skill">
+        <strong>Generative AI &amp; Agentic Systems:</strong> GPT-4o (Azure OpenAI), Claude Sonnet &amp; Titan
+        Embeddings V2 (AWS Bedrock), LangChain, LangGraph, RAG, Multi-Agent Orchestration, MCP (Model Context Protocol),
+        Prompt Engineering, SentenceTransformers
+      </p>
+      <p class="skill">
+        <strong>Backend &amp; Data Engineering:</strong> Python, FastAPI, Pydantic, REST APIs, Async &amp; Concurrent
+        Processing, Server-Sent Events (SSE), Microservices Architecture, SQL, SQLite
+      </p>
+      <p class="skill">
+        <strong>Databases &amp; Retrieval:</strong> DynamoDB, ChromaDB, MySQL, S3 Vector Storage, BM25, Semantic Vector
+        Search, Hybrid Retrieval, Cross-Encoder Reranking, RRF (Reciprocal Rank Fusion), Document Chunking
+      </p>
+      <p class="skill">
+        <strong>Cloud &amp; DevOps:</strong> AWS (ECS Fargate, Batch, Lambda, Bedrock, S3, EventBridge, ALB, Route 53,
+        CloudWatch, Secrets Manager, IAM, ECR, CodeBuild), Azure OpenAI, Docker, CI/CD
+      </p>
+      <p class="skill">
+        <strong>Frontend, Quality &amp; Tools:</strong> React 18/19, Vite, JavaScript, HTML/CSS, pytest, Ruff, Git,
+        Agile, JIRA, Postman, VS Code
+      </p>
+      <p class="skill">
+        <strong>Security, Evaluation &amp; Monitoring:</strong> Okta OIDC, ALB-Signed Identity Validation, Role &amp;
+        Portfolio RBAC, JWT Sessions, RAGAS, DeepEval, BERTScore, CloudWatch Alarms &amp; Observability
+      </p>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <div class="job">
+        <div class="row">
+          <span class="company">Tata Consultancy Services (TCS)</span>
+          <span class="right">2024 – Present</span>
+        </div>
+        <div class="role">Generative AI Engineer</div>
+
+        <div class="project">
+          <div class="row">
+            <span class="name">OpsBuddy AI – Intelligent IT Operations &amp; Incident Resolution Platform</span>
+            <span class="right">Lead AI Engineer</span>
+          </div>
+          <ul>
+            <li>
+              Architected a production-grade AI-assisted IT operations platform for L1/L2 incident resolution,
+              orchestrating specialized Incident, SOP, Change Request (CR), RCA, and Resolution modules via concurrent
+              execution pipelines to synthesize incident context, historical tickets, and operational knowledge into a
+              unified analyst workbench.
+            </li>
+            <li>
+              Built governed MCP Servers (FastMCP) enabling enterprise tool integration (enterprise client),
+              operational chat, incident workbench follow-ups, and an automated SOP Builder service (/sop-mcp) with
+              role-aligned access controls.
+            </li>
+            <li>
+              Engineered a hybrid retrieval and reranking pipeline combining Titan Text Embeddings V2, BM25 lexical
+              search, and cross-encoder reranking over isolated, business-unit-scoped S3 Vector collections (POS, BI, DL
+              business units).
+            </li>
+            <li>
+              Developed scalable FastAPI and a React workbench deployed on AWS ECS Fargate, integrating Amazon Bedrock
+              (Claude Sonnet) with asynchronous execution and real-time UI updates via Server-Sent Events (SSE).
+            </li>
+            <li>
+              Designed an event-driven and scheduled Knowledge Ingestion Pipeline using S3, EventBridge, Lambda, AWS
+              Batch, and ECS Fargate Tasks for automated document chunking and vector indexing across ServiceNow,
+              Autosys, and OpsRamp.
+            </li>
+            <li>
+              Implemented DynamoDB-backed conversation memory, workbench caching, and enterprise security via Okta
+              &amp; ALB OIDC authentication, portfolio-level RBAC, SSL/TLS termination, and CloudWatch observability.
+            </li>
+            <li>
+              Reduced mean time to resolution (MTTR) by 60% and automated 75% of repetitive L1/L2 incident
+              investigation and resolution workflows across production support teams.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project page-break">
+          <div class="row">
+            <span class="name">Idea Innovator AI – Intelligent Innovation Management &amp; Multi-Agent Ideation Platform</span>
+            <span class="right">Generative AI Engineer</span>
+          </div>
+          <ul>
+            <li>
+              Architected a Multi-Agent ideation platform using LangGraph stateful orchestration across 8 specialized
+              agents (Routing, Field &amp; Sub-Question Extraction, Coverage Scoring, Mentorship, Synthesis, Document
+              Parsing) to guide users through structured 7-section business cases.
+            </li>
+            <li>
+              Engineered a 12-state idea lifecycle engine supporting User, Evaluator, and Leadership personas,
+              enforcing strict role-gated state transitions, immutable submission snapshots, and complete audit trails
+              from draft to POC delivery.
+            </li>
+            <li>
+              Developed real-time semantic duplicate detection using SentenceTransformers (all-MiniLM-L6-v2) and a
+              persistent ChromaDB vector store with configurable cosine-similarity thresholds to block redundant
+              organizational submissions.
+            </li>
+            <li>
+              Designed an automated AI Evaluation &amp; Leadership Radar pipeline powered by Azure OpenAI (GPT-4o),
+              combining multi-criteria LLM scoring with human evaluator overrides, composite priority ranking (recency
+              decay + theme weights), impact-effort quadrant analytics, and executive brief generation.
+            </li>
+            <li>
+              Built an asynchronous 4-stage LangGraph POC generation chain that autonomously compiles approved ideas
+              into downloadable BRD, FRD, UIRD, and interactive HTML prototype artifacts with persistent run tracking
+              and retry-on-failure resilience.
+            </li>
+            <li>
+              Delivered the end-to-end full-stack product with 50+ role-gated FastAPI REST &amp; streaming endpoints,
+              JWT session authentication, and a React 19 (Vite) multi-persona dashboard application.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="row">
+            <span class="name">InsightStream AI – Intelligent Content Analytics &amp; Engagement Platform</span>
+            <span class="right">Generative AI Engineer</span>
+          </div>
+          <ul>
+            <li>
+              Developed a production-grade AI-powered content analytics platform combining sentiment analysis,
+              transformer-based NLP classification, and automated categorization pipelines for real-time user
+              engagement insights.
+            </li>
+            <li>
+              Built a scalable NLP sentence-type classification framework and Python data-processing workflows capable
+              of analyzing 100K+ data points with 92% classification accuracy.
+            </li>
+            <li>
+              Improved content engagement efficiency by 40% through AI-driven recommendation engines, automated content
+              tagging, and priority scoring algorithms.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Independent Project</h2>
+
+      <div class="project avoid-break">
+        <div class="row">
+          <span class="name">PM Agent – Transcript-to-Jira Audit Agent</span>
+          <span class="right">Independent Project</span>
+        </div>
+        <ul>
+          <li>
+            Built a transcript-to-Jira audit agent using LangGraph and MCP connectors (Jira, GitHub, Teams) with
+            verbatim source-quote citations, Git-vs-transcript discrepancy detection, and human-gated writeback.
+          </li>
+          <li>
+            Designed a deterministic five-gate review pipeline with an idempotent Jira sync that drops any draft
+            lacking a verified transcript citation before persistence.
+          </li>
+          <li>
+            Added a golden-dataset eval harness; 19/19 tests passing with 100% citation coverage, 75% action-item
+            recall, and 66.7% due-date accuracy across a 4-meeting benchmark.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="avoid-break">
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="row">
+          <span class="degree">Bachelor of Technology – Information Technology</span>
+          <span class="right">CGPA: 8.53/10</span>
+        </div>
+        <p class="school">
+          VNR Vignana Jyothi Institute of Engineering and Technology (2020 – 2024)
+        </p>
+      </div>
+    </section>
+
+    <section class="avoid-break">
+      <h2>Certifications &amp; Training</h2>
+      <ul class="cert-list">
+        <li>
+          <strong>AWS Cloud Practitioner</strong> – Cloud computing fundamentals, AWS services, and architecture best
+          practices
+        </li>
+        <li>
+          <strong>AIML – Deep Learning Workshop</strong> – Advanced workshop on AI/ML and Deep Learning conducted by
+          ACM VNRVJIET
+        </li>
+        <li>
+          <strong>Python Advanced Programming Workshop</strong> – Intensive Python development workshop conducted by
+          ACM VNRVJIET
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
