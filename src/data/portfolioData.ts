@@ -442,6 +442,9 @@ rank_score = (
 export interface OpsScenario {
   id: string;
   domain: 'Tier 1' | 'Store Ops' | 'Data Platform' | 'Logistics';
+  role: string;
+  scope: string;
+  collections: string[];
   demoCaseId: string;
   title: string;
   query: string;
@@ -464,6 +467,9 @@ export const OPS_SCENARIOS: OpsScenario[] = [
   {
     id: 'tier1-price-override',
     domain: 'Tier 1',
+    role: 'Tier 1 analyst',
+    scope: 'Store Ops',
+    collections: ['store-ops-runbooks', 'store-ops-cases'],
     demoCaseId: 'DEMO-2201',
     title: 'Temporary price override lookup',
     query: 'How do I apply a temporary price override and confirm it reached the register?',
@@ -508,6 +514,9 @@ export const OPS_SCENARIOS: OpsScenario[] = [
   {
     id: 'store-stuck-settlement',
     domain: 'Store Ops',
+    role: 'Tier 2 analyst',
+    scope: 'Store Ops',
+    collections: ['store-ops-runbooks', 'store-ops-cases', 'change-records'],
     demoCaseId: 'DEMO-3142',
     title: 'Stalled settlement batch',
     query: 'How do we clear a stalled settlement batch without duplicate tender posting?',
@@ -552,6 +561,9 @@ export const OPS_SCENARIOS: OpsScenario[] = [
   {
     id: 'data-nightly-job',
     domain: 'Data Platform',
+    role: 'Tier 2 analyst',
+    scope: 'Data Platform',
+    collections: ['data-platform-runbooks', 'data-platform-alerts', 'change-records'],
     demoCaseId: 'DEMO-4078',
     title: 'Nightly aggregate job failure',
     query: 'The nightly sales aggregate failed with exit code 12 after warehouse maintenance. What is the safe recovery path?',
@@ -596,6 +608,9 @@ export const OPS_SCENARIOS: OpsScenario[] = [
   {
     id: 'logistics-manifest',
     domain: 'Logistics',
+    role: 'Tier 2 analyst',
+    scope: 'Logistics',
+    collections: ['logistics-runbooks', 'logistics-cases'],
     demoCaseId: 'DEMO-5120',
     title: 'Outbound manifest stuck in PENDING_ACK',
     query: 'Outbound manifests are stuck in PENDING_ACK after a partner gateway reset. How do we replay them safely?',

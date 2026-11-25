@@ -14,6 +14,7 @@ import {
   GithubLogo,
   GraduationCap,
   LinkedinLogo,
+  Phone,
   ShieldCheck,
   TerminalWindow,
 } from '@phosphor-icons/react';
@@ -729,10 +730,10 @@ export function App() {
                 </h2>
                 <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-[var(--text-secondary)]">
                   Happy to walk through the architecture, trade-offs, and eval results behind any of these systems.
-                  The fastest way to reach me is email.
+                  Reach me by email or phone.
                 </p>
                 <p className="mt-4 font-mono text-xs text-[var(--text-secondary)]">
-                  {PROFILE.location} · {PROFILE.email}
+                  {PROFILE.location} · {PROFILE.email} · {PROFILE.phone}
                 </p>
               </div>
 
@@ -743,6 +744,13 @@ export function App() {
                 >
                   <Envelope size={17} weight="bold" aria-hidden="true" />
                   Email me
+                </a>
+                <a
+                  href={`tel:${PROFILE.phone.replace(/[^\d+]/g, '')}`}
+                  className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[var(--border-strong)] bg-[var(--bg-canvas)] px-4 py-2.5 text-sm font-semibold text-[var(--text-primary)] no-underline transition-colors hover:border-[var(--accent-signal)]"
+                >
+                  <Phone size={17} weight="bold" aria-hidden="true" />
+                  Call
                 </a>
                 <a
                   href={RESUME_PATH}
