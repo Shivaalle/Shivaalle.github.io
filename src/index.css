@@ -1,0 +1,413 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --bg-canvas-light: #f4f7fb;
+  --bg-canvas-dark: #020617;
+  --bg-surface-light: #ffffff;
+  --bg-surface-dark: #0e1223;
+  --bg-elevated-light: #e8eef6;
+  --bg-elevated-dark: #151c33;
+  --bg-code-light: #0f172a;
+  --bg-code-dark: #090d1a;
+
+  --text-primary-light: #0f172a;
+  --text-primary-dark: #f8fafc;
+  --text-secondary-light: #475569;
+  --text-secondary-dark: #94a3b8;
+
+  --border-subtle-light: #cbd5e1;
+  --border-subtle-dark: #1e293b;
+  --border-strong-light: #94a3b8;
+  --border-strong-dark: #334155;
+
+  --accent-signal-light: #047857;
+  --accent-signal-dark: #22c55e;
+  --on-accent-signal-light: #ffffff;
+  --on-accent-signal-dark: #020617;
+  --accent-signal-soft-light: rgba(4, 120, 87, 0.1);
+  --accent-signal-soft-dark: rgba(34, 197, 94, 0.13);
+
+  --accent-cyan-light: #0369a1;
+  --accent-cyan-dark: #38bdf8;
+  --accent-cyan-soft-light: rgba(3, 105, 161, 0.1);
+  --accent-cyan-soft-dark: rgba(56, 189, 248, 0.13);
+
+  --accent-amber-light: #b45309;
+  --accent-amber-dark: #fbbf24;
+  --accent-amber-soft-light: rgba(180, 83, 9, 0.1);
+  --accent-amber-soft-dark: rgba(251, 191, 36, 0.13);
+
+  --accent-danger-light: #dc2626;
+  --accent-danger-dark: #f87171;
+
+  --scrollbar-track-light: #e2e8f0;
+  --scrollbar-track-dark: #0f172a;
+  --scrollbar-thumb-light: #64748b;
+  --scrollbar-thumb-dark: #475569;
+
+  /* Default fallback (light) before prefers-color-scheme or light-dark() */
+  --bg-canvas: var(--bg-canvas-light);
+  --bg-surface: var(--bg-surface-light);
+  --bg-elevated: var(--bg-elevated-light);
+  --bg-code: var(--bg-code-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border-subtle: var(--border-subtle-light);
+  --border-strong: var(--border-strong-light);
+  --accent-signal: var(--accent-signal-light);
+  --on-accent-signal: var(--on-accent-signal-light);
+  --accent-signal-soft: var(--accent-signal-soft-light);
+  --accent-cyan: var(--accent-cyan-light);
+  --accent-cyan-soft: var(--accent-cyan-soft-light);
+  --accent-amber: var(--accent-amber-light);
+  --accent-amber-soft: var(--accent-amber-soft-light);
+  --accent-danger: var(--accent-danger-light);
+  --scrollbar-track: var(--scrollbar-track-light);
+  --scrollbar-thumb: var(--scrollbar-thumb-light);
+
+  @media (prefers-color-scheme: dark) {
+    --bg-canvas: var(--bg-canvas-dark);
+    --bg-surface: var(--bg-surface-dark);
+    --bg-elevated: var(--bg-elevated-dark);
+    --bg-code: var(--bg-code-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --border-subtle: var(--border-subtle-dark);
+    --border-strong: var(--border-strong-dark);
+    --accent-signal: var(--accent-signal-dark);
+    --on-accent-signal: var(--on-accent-signal-dark);
+    --accent-signal-soft: var(--accent-signal-soft-dark);
+    --accent-cyan: var(--accent-cyan-dark);
+    --accent-cyan-soft: var(--accent-cyan-soft-dark);
+    --accent-amber: var(--accent-amber-dark);
+    --accent-amber-soft: var(--accent-amber-soft-dark);
+    --accent-danger: var(--accent-danger-dark);
+    --scrollbar-track: var(--scrollbar-track-dark);
+    --scrollbar-thumb: var(--scrollbar-thumb-dark);
+  }
+
+  @supports (color: light-dark(white, black)) {
+    --bg-canvas: light-dark(var(--bg-canvas-light), var(--bg-canvas-dark));
+    --bg-surface: light-dark(var(--bg-surface-light), var(--bg-surface-dark));
+    --bg-elevated: light-dark(var(--bg-elevated-light), var(--bg-elevated-dark));
+    --bg-code: light-dark(var(--bg-code-light), var(--bg-code-dark));
+    --text-primary: light-dark(var(--text-primary-light), var(--text-primary-dark));
+    --text-secondary: light-dark(var(--text-secondary-light), var(--text-secondary-dark));
+    --border-subtle: light-dark(var(--border-subtle-light), var(--border-subtle-dark));
+    --border-strong: light-dark(var(--border-strong-light), var(--border-strong-dark));
+    --accent-signal: light-dark(var(--accent-signal-light), var(--accent-signal-dark));
+    --on-accent-signal: light-dark(var(--on-accent-signal-light), var(--on-accent-signal-dark));
+    --accent-signal-soft: light-dark(var(--accent-signal-soft-light), var(--accent-signal-soft-dark));
+    --accent-cyan: light-dark(var(--accent-cyan-light), var(--accent-cyan-dark));
+    --accent-cyan-soft: light-dark(var(--accent-cyan-soft-light), var(--accent-cyan-soft-dark));
+    --accent-amber: light-dark(var(--accent-amber-light), var(--accent-amber-dark));
+    --accent-amber-soft: light-dark(var(--accent-amber-soft-light), var(--accent-amber-soft-dark));
+    --accent-danger: light-dark(var(--accent-danger-light), var(--accent-danger-dark));
+    --scrollbar-track: light-dark(var(--scrollbar-track-light), var(--scrollbar-track-dark));
+    --scrollbar-thumb: light-dark(var(--scrollbar-thumb-light), var(--scrollbar-thumb-dark));
+  }
+
+  &:has(> head > meta[name="color-scheme"][content="dark"]) {
+    color-scheme: dark;
+  }
+
+  &:has(> head > meta[name="color-scheme"][content="light"]) {
+    color-scheme: light;
+  }
+
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  accent-color: var(--accent-signal);
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 5.25rem;
+  }
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--accent-signal-soft);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+}
+
+/* Visually hidden utility per modern-web-guidance accessibility guide */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.skip-link:focus-visible {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 2px solid var(--accent-signal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* High contrast focus indicators */
+:where(a:any-link, button, input, select, textarea, summary, [tabindex="0"]):focus-visible {
+  outline: 2px solid var(--accent-signal);
+  outline-offset: 2px;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 2px;
+  background: linear-gradient(90deg, var(--accent-signal), var(--accent-cyan));
+  transform-origin: 0 50%;
+  transform: scaleX(var(--scroll-fallback, 0));
+  z-index: 60;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    @keyframes grow-progress {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    #scroll-progress {
+      animation: grow-progress auto linear;
+      animation-timeline: scroll();
+    }
+  }
+}
+
+/* Native top-layer modal dialog styling */
+dialog.evidence-dialog {
+  margin: auto;
+  max-inline-size: min(56rem, calc(100vw - 2rem));
+  max-block-size: min(88dvh, 52rem);
+  inline-size: 100%;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 1rem;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: 0 24px 64px rgba(2, 6, 23, 0.45);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+dialog.evidence-dialog[open] {
+  display: flex;
+}
+
+dialog.evidence-dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog.evidence-dialog::backdrop {
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+/* Tablist with CSS Anchor Positioning underline */
+.workbench-tablist {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 0.25rem;
+  border-block-end: 1px solid var(--border-subtle);
+}
+
+.workbench-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.workbench-tablist::before {
+  content: "";
+  position: absolute;
+  position-anchor: var(--active-tab-anchor);
+  inset-block-start: calc(anchor(self-end) - 2px);
+  inset-inline-start: anchor(self-start);
+  inset-inline-end: anchor(self-end);
+  border-block-end: 2px solid var(--accent-signal);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .workbench-tablist::before {
+    transition:
+      inset-inline-start 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      inset-inline-end 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+.workbench-tab {
+  position: relative;
+  flex: none;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  transition: color 180ms ease;
+}
+
+.workbench-tab:hover {
+  color: var(--text-primary);
+}
+
+.workbench-tab[aria-selected="true"] {
+  color: var(--text-primary);
+}
+
+@supports not (position-anchor: --active) {
+  .workbench-tablist::before {
+    content: none;
+  }
+
+  .workbench-tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    border-block-end: 2px solid var(--accent-signal);
+  }
+}
+
+/* Subtle architectural grid background for workbench panels */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--border-subtle) 35%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--border-subtle) 35%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Theme toggle dual-label visibility driven by computed scheme without extra JS classes */
+.theme-option-dark,
+.theme-option-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* Default when OS is light and no dark override */
+.theme-option-light {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-option-dark {
+    display: none;
+  }
+  .theme-option-light {
+    display: inline-flex;
+  }
+}
+
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .theme-option-dark {
+  display: none;
+}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .theme-option-light {
+  display: inline-flex;
+}
+
+:root:has(> head > meta[name="color-scheme"][content="light"]) .theme-option-light {
+  display: none;
+}
+:root:has(> head > meta[name="color-scheme"][content="light"]) .theme-option-dark {
+  display: inline-flex;
+}
+
+/* Code blocks stay dark for readability */
+.code-surface {
+  color-scheme: dark;
+  background-color: var(--bg-code);
+  color: #e2e8f0;
+  border: 1px solid #1e293b;
+}
+
+@media (hover: hover) {
+  .interactive-row {
+    transition: border-color 180ms ease, background-color 180ms ease;
+  }
+}
+
+button,
+a,
+[role="tab"] {
+  cursor: pointer;
+}

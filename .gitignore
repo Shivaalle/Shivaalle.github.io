@@ -1,0 +1,17 @@
+# Local tooling and generated output
+node_modules/
+dist/
+.DS_Store
+tsconfig.tsbuildinfo
+*.log
+
+# Local agent/design tooling, not part of the published site
+.agents/
+.gemini/
+design-system/
+docs/
+
+# Local environment overrides
+.env
+.env.*
+*.local

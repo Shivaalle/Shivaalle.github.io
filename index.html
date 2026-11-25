@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const stored = localStorage.getItem('color-scheme');
+        if (stored === 'light' || stored === 'dark') {
+          document.querySelector('meta[name="color-scheme"]').content = stored;
+        }
+      } catch {}
+    </script>
+    <title>Shiva Teja Alle — Generative AI &amp; Multi-Agent Systems Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Shiva Teja Alle, a generative AI engineer at TCS building production multi-agent systems with hybrid retrieval, deterministic state, and human approval gates."
+    />
+    <meta name="author" content="Shiva Teja Alle" />
+    <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shiva Teja Alle — AI systems that can prove their work" />
+    <meta
+      property="og:description"
+      content="Production multi-agent systems, hybrid retrieval, deterministic state machines, and human approval gates. Explore three interactive AI case studies."
+    />
+    <meta property="og:site_name" content="Shiva Teja Alle" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Shiva Teja Alle — AI systems that can prove their work" />
+    <meta
+      name="twitter:description"
+      content="Generative AI engineer building production multi-agent systems with verifiable state and retrieval."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shiva Teja Alle",
+        "jobTitle": "Generative AI Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tata Consultancy Services"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "VNR Vignana Jyothi Institute of Engineering and Technology"
+        },
+        "email": "mailto:shiva.alle22@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://github.com/Shivaalle",
+          "https://www.linkedin.com/in/shiva-teja-alle-254895201"
+        ],
+        "knowsAbout": [
+          "Generative AI",
+          "Multi-agent systems",
+          "LangGraph",
+          "Model Context Protocol",
+          "Hybrid retrieval",
+          "Retrieval-augmented generation",
+          "Human-in-the-loop workflows",
+          "AWS Bedrock",
+          "FastAPI"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
