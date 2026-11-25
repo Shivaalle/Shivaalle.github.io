@@ -274,22 +274,22 @@ export function App() {
                 <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-[var(--text-secondary)]">
                   Selected outcomes
                 </p>
-                <dl className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <div className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {PROFILE.highlights.map((metric) => (
                     <div
                       key={metric.label}
                       className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-3.5"
                     >
-                      <dd className="font-[var(--font-display)] text-2xl font-bold leading-none text-[var(--text-primary)]">
+                      <p className="font-[var(--font-display)] text-2xl font-bold leading-none text-[var(--text-primary)]">
                         {metric.value}
-                      </dd>
-                      <dt className="mt-1.5 text-xs font-medium text-[var(--text-secondary)]">{metric.label}</dt>
+                      </p>
+                      <p className="mt-1.5 text-xs font-medium text-[var(--text-secondary)]">{metric.label}</p>
                       <p className="mt-1 font-mono text-[10px] leading-snug text-[var(--accent-signal)]">
                         {metric.source}
                       </p>
                     </div>
                   ))}
-                </dl>
+                </div>
               </div>
             </div>
 
