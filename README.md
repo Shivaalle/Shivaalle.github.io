@@ -29,7 +29,7 @@ npm run preview
 
 ## What is inside
 
-- **OpsBuddy AI** — a sanitized, synthetic walkthrough of a domain-isolated operations copilot: identity-aware access, concurrent agents, governed MCP tools, and hybrid BM25 + dense retrieval with RRF and cross-encoder reranking.
+- **OpsBuddy AI** — a sanitized, synthetic walkthrough of a domain-isolated operations copilot: identity-aware access, concurrent agents, governed MCP tools, and hybrid BM25 + dense retrieval fused with RRF.
 - **Idea Innovator AI** — a sanitized walkthrough of an 8-agent LangGraph intake, a 12-state role-gated lifecycle, deterministic ranking, and a four-stage POC compiler.
 - **PM Agent** — a source-verified independent build: transcript-to-Jira auditing with verbatim citations, Git discrepancy detection, human-gated writeback, and a checked-in golden eval harness.
 

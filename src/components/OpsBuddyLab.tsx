@@ -580,7 +580,12 @@ export function OpsBuddyLab({ onOpenEvidence }: OpsBuddyLabProps) {
                         <p className="mt-1.5 text-xs text-[var(--text-secondary)]">{cand.snippet}</p>
                         <p className="mt-1.5 flex items-center gap-1.5 font-mono text-[11px] text-[var(--accent-cyan)]">
                           <Database size={12} aria-hidden="true" />
-                          {cand.source} · Cross-encoder {(cand.crossEncoderScore * 100).toFixed(0)}%
+                          {cand.source} ·{' '}
+                          {retrievalMode === 'lexical'
+                            ? `BM25 rank #${cand.bm25Rank + 1}`
+                            : retrievalMode === 'vector'
+                              ? `vector rank #${cand.denseRank + 1}`
+                              : `fused confidence ${(cand.normalizedRrf * 100).toFixed(0)}%`}
                         </p>
                       </div>
                     ))}

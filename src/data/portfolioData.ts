@@ -225,7 +225,7 @@ export const PROJECTS: Record<ProjectId, ProjectSummary> = {
 rrf_score = 1 / (k + lexical_rank) + 1 / (k + vector_rank)
 
 top_candidates = sorted(candidates, key=rrf_score, reverse=True)[:limit]
-final_ranking = cross_encoder.rescore(query, top_candidates)`,
+final_ranking = dedupe_by_source_id(top_candidates)`,
     },
   },
 
@@ -455,7 +455,6 @@ export interface OpsScenario {
     source: string;
     bm25Rank: number;
     denseRank: number;
-    crossEncoderScore: number;
     snippet: string;
   }>;
   toolCalled: string;
@@ -483,7 +482,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic runbook · demo data',
         bm25Rank: 0,
         denseRank: 0,
-        crossEncoderScore: 0.98,
         snippet:
           'Open item maintenance → create a time-boxed override with a reason code → publish the delta → verify the receipt on a test register.',
       },
@@ -493,7 +491,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic escalation guide · demo data',
         bm25Rank: 2,
         denseRank: 1,
-        crossEncoderScore: 0.82,
         snippet:
           'If two publish attempts fail with the same validation error, attach the SKU batch log and route the case to Tier 2.',
       },
@@ -503,7 +500,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic incident history · demo data',
         bm25Rank: 3,
         denseRank: 2,
-        crossEncoderScore: 0.75,
         snippet:
           'Resolved after clearing a cached promotion window and republishing the price delta to the store cluster.',
       },
@@ -530,7 +526,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic runbook · demo data',
         bm25Rank: 0,
         denseRank: 0,
-        crossEncoderScore: 0.96,
         snippet:
           'Confirm the end-of-day journal lock → drain the pending tender buffer → reconcile the batch hash before restarting the terminal.',
       },
@@ -540,7 +535,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic incident history · demo data',
         bm25Rank: 2,
         denseRank: 1,
-        crossEncoderScore: 0.89,
         snippet:
           'Resolved by resetting the settlement worker after verifying there were no unsettled authorization holds in the local cache.',
       },
@@ -550,7 +544,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic change record · demo data',
         bm25Rank: 5,
         denseRank: 3,
-        crossEncoderScore: 0.72,
         snippet:
           'Updated offline synchronization timeouts for high-volume lanes; monitor the first batch close after rollout.',
       },
@@ -577,7 +570,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic runbook · demo data',
         bm25Rank: 0,
         denseRank: 1,
-        crossEncoderScore: 0.94,
         snippet:
           'Exit code 12 indicates an expired staging session. Refresh the session, validate warehouse health, then restart the dependent job graph from the failed node.',
       },
@@ -587,7 +579,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic change record · demo data',
         bm25Rank: 3,
         denseRank: 0,
-        crossEncoderScore: 0.91,
         snippet:
           'Compute cluster restarted inside the maintenance window; downstream jobs queued past the retry limit and require a controlled restart.',
       },
@@ -597,7 +588,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic monitoring alert · demo data',
         bm25Rank: 1,
         denseRank: 4,
-        crossEncoderScore: 0.79,
         snippet:
           'The upstream ingest job completed late because of cluster warm-up, delaying the aggregate and triggering an SLA warning.',
       },
@@ -624,7 +614,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic runbook · demo data',
         bm25Rank: 1,
         denseRank: 0,
-        crossEncoderScore: 0.95,
         snippet:
           'Inspect the outbound dead-letter topic, replay unacknowledged manifests in small batches, and preserve the idempotency key on every message.',
       },
@@ -634,7 +623,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic incident history · demo data',
         bm25Rank: 0,
         denseRank: 2,
-        crossEncoderScore: 0.87,
         snippet:
           'A TLS handshake reset dropped 14 acknowledgements. The fix was a controlled batch replay after a partner endpoint health check.',
       },
@@ -644,7 +632,6 @@ export const OPS_SCENARIOS: OpsScenario[] = [
         source: 'Synthetic checklist · demo data',
         bm25Rank: 4,
         denseRank: 3,
-        crossEncoderScore: 0.68,
         snippet:
           'Validate carton and pallet barcode counts against the manifest header before releasing the shipment.',
       },
@@ -931,7 +918,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     items: [
       'Hybrid retrieval (BM25 + dense)',
       'Reciprocal Rank Fusion (RRF)',
-      'Cross-encoder reranking',
+      'Rank fusion and deduplication',
       'Amazon Titan Text Embeddings V2',
       'SentenceTransformers (all-MiniLM-L6-v2)',
       'ChromaDB',
