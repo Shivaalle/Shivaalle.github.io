@@ -132,7 +132,7 @@ export const PROJECTS: Record<ProjectId, ProjectSummary> = {
     problem:
       'L1/L2 analysts had to correlate incidents, changes, batch jobs, monitoring alerts, and SOPs across business domains — each with different vocabulary and access rules.',
     orchestration:
-      'Concurrent multi-agent orchestration across incident, SOP, change, RCA, resolution, and reranking modules, with FastAPI + SSE streaming on AWS ECS Fargate.',
+      'Concurrent multi-agent orchestration across incident, SOP, change, RCA, resolution, and rank-fusion modules, with FastAPI + SSE streaming on AWS ECS Fargate.',
     securityAndGates:
       'SSO-backed identity, role- and domain-scoped retrieval collections, origin/CSRF checks, and separately governed MCP tool surfaces.',
     impact:

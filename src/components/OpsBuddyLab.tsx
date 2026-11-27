@@ -451,7 +451,7 @@ export function OpsBuddyLab({ onOpenEvidence }: OpsBuddyLabProps) {
                 <div className="mt-4 space-y-4">
                   <p className="text-xs text-[var(--text-secondary)]">
                     <strong className="text-[var(--text-primary)]">{scenario.agentsExecuted.length} agents</strong>{' '}
-                    participate in this request. Domain agents fan out concurrently; the reranker joins after retrieval.
+                    participate in this request. Domain agents fan out concurrently; the rank-fusion stage joins after retrieval.
                   </p>
                   <ul className="space-y-2">
                     {scenario.agentsExecuted.map((agent, idx) => (
