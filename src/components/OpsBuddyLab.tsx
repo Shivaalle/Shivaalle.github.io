@@ -42,9 +42,9 @@ const PIPELINE_STEPS = [
   },
   {
     id: 'rerank',
-    title: 'Hybrid RRF + cross-encoder',
+    title: 'Hybrid RRF fusion',
     detail:
-      'Fuse lexical BM25 ranks with dense vector ranks using Reciprocal Rank Fusion, then re-score the top candidates.',
+      'Fuse lexical BM25 ranks with dense vector ranks using Reciprocal Rank Fusion, then normalize, deduplicate, and keep the top candidates.',
   },
   {
     id: 'stream',
@@ -60,7 +60,7 @@ const AGENT_SOURCES: Record<string, string> = {
   SOPAgent: 'Reads runbooks and the SOP index',
   CRAgent: 'Reads change records and release notes',
   RCAAgent: 'Reads RCA notes and alert timelines',
-  Reranker: 'Fuses candidates, then cross-encoder re-scores',
+  Reranker: 'Fuses BM25 and dense ranks with RRF, then deduplicates',
   ResolutionAgent: 'Synthesizes the cited answer',
 };
 
@@ -68,7 +68,7 @@ const MODE_NOTES: Record<RetrievalMode, string> = {
   lexical: 'BM25 is precise on exact codes and runbook names, but misses paraphrases and synonyms.',
   vector: 'Dense retrieval catches paraphrases, but can drift on exact IDs, codes, and product names.',
   hybrid:
-    'RRF fuses both rank lists without score calibration, then a cross-encoder re-scores the top candidates.',
+    'RRF fuses both rank lists without score calibration, then the fused list is normalized, deduplicated, and cut to the top candidates.',
 };
 
 function chipClass(active: boolean) {

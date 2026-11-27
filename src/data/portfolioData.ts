@@ -141,7 +141,7 @@ export const PROJECTS: Record<ProjectId, ProjectSummary> = {
       'AWS Bedrock (Claude Sonnet)',
       'Titan Embeddings V2',
       'FastMCP',
-      'BM25 + RRF + Cross-Encoder',
+      'BM25 + RRF + Titan Embeddings',
       'FastAPI + SSE',
       'AWS ECS Fargate',
       'DynamoDB',
@@ -173,7 +173,7 @@ export const PROJECTS: Record<ProjectId, ProjectSummary> = {
       {
         id: 'rerank',
         label: 'Hybrid retrieval',
-        detail: 'BM25 + 1,024-dim embeddings fused with RRF, then cross-encoder reranking',
+        detail: 'BM25 + 1,024-dim embeddings fused with RRF, then normalized and deduplicated',
         kind: 'agent',
       },
       {
@@ -205,7 +205,7 @@ export const PROJECTS: Record<ProjectId, ProjectSummary> = {
           label: '03 · Retrieval',
           title: 'Hybrid ranking with a lexical safety net',
           summary:
-            'Lexical BM25 catches exact identifiers; dense embeddings catch paraphrases. Reciprocal Rank Fusion combines both, and a cross-encoder re-scores only the small final candidate set.',
+            'Lexical BM25 catches exact identifiers; dense embeddings catch paraphrases. Reciprocal Rank Fusion combines both, then the fused list is normalized, deduplicated, and cut to the top candidates.',
         },
         {
           label: '04 · Tooling',
